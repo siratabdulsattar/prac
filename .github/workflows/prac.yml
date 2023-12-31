@@ -12,7 +12,7 @@ jobs:
       - name: checking out to the repository
         uses: actions/checkout@v4
       - name: make file
-        run: nano prac.txt
+        run: touch prac.txt
       - name: write on file
         run: echo "hello world" >> prac.txt
       - name: read file
