@@ -1,0 +1,19 @@
+name: practice workflow using github actions
+run-name: ${{ github.actor }} has triggered this workflow using $ {{ github.event_name }} on ${{ github.repository }} repo.
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checking out to the repository
+        uses: actions/checkout@v4
+      - name: make file
+        run: nano prac.txt
+      - name: write on file
+        run: echo "hello world" >> prac.txt
+      - name: read file
+        run: cat prac.txt 
